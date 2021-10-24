@@ -1,0 +1,98 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Asets/Lobby/HostButton.gd" type="Script" id=1]
+[ext_resource path="res://Asets/Lobby/JoinButton.gd" type="Script" id=2]
+[ext_resource path="res://Asets/Lobby/Connecting.gd" type="Script" id=3]
+[ext_resource path="res://Asets/Lobby/Lobby.gd" type="Script" id=4]
+
+[node name="lobby" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HostButton" type="Button" parent="."]
+margin_left = 497.019
+margin_top = 326.218
+margin_right = 784.019
+margin_bottom = 416.218
+text = "Host"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ip" type="Label" parent="HostButton"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -140.5
+margin_top = -42.7107
+margin_right = 140.5
+margin_bottom = -8.71069
+text = "Ip(Your Own IP)"
+align = 1
+valign = 1
+
+[node name="JoinButton" type="Button" parent="."]
+margin_left = 492.256
+margin_top = 489.72
+margin_right = 779.256
+margin_bottom = 579.72
+text = "Host"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ip" type="LineEdit" parent="JoinButton"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -139.656
+margin_top = -39.3365
+margin_right = 141.344
+margin_bottom = -5.33649
+text = "Ip(Your Own IP)"
+align = 1
+
+[node name="invalid Ip lable" type="Label" parent="JoinButton"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -141.395
+margin_top = 104.914
+margin_right = 139.605
+margin_bottom = 138.914
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "This Ip is invalid"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Connecting" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Connectinglable" type="Label" parent="Connecting"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Connecting To Server"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="HostButton" to="HostButton" method="host"]
+[connection signal="set_connect_type" from="HostButton" to="Connecting" method="set_connect_type"]
+[connection signal="pressed" from="JoinButton" to="JoinButton" method="_on_JoinButton_pressed"]
+[connection signal="set_connect_type" from="JoinButton" to="Connecting" method="set_connect_type"]

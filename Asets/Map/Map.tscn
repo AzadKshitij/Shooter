@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Asets/Map/map.gd" type="Script" id=2]
+
+[sub_resource type="PlaneMesh" id=1]
+
+[sub_resource type="PrismMesh" id=2]
+size = Vector3( 10, 3, 2 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 1, 0, 0, 1 )
+
+[node name="Map" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="World" type="CSGCombiner" parent="."]
+use_collision = true
+collision_mask = 0
+
+[node name="ground" type="CSGMesh" parent="World"]
+transform = Transform( 48.4863, 0, 0, 0, 1, 0, 0, 0, 46.1756, 0, 0, 0 )
+mesh = SubResource( 1 )
+
+[node name="objects" type="CSGMesh" parent="World"]
+transform = Transform( 3.59522, 0, 0.113281, 0, 2, 0, -0.203963, 0, 1.99679, 0.745404, 2.92435, -14.3049 )
+mesh = SubResource( 2 )
+material = SubResource( 3 )
+
+[node name="player1pos" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.703, 2.3, -7.028 )
+
+[node name="player2pos" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.95, 2.3, -10.868 )

@@ -1,0 +1,187 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://addons/kenney_prototypes/assets/colors/purple/scenes/prototype_purple_11.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/kenney_prototypes/assets/colors/red/scenes/prototype_red_01.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/kenney_prototypes/assets/colors/purple/scenes/prototype_purple_05.tscn" type="PackedScene" id=3]
+[ext_resource path="res://addons/kenney_prototypes/assets/colors/purple/scenes/prototype_purple_12.tscn" type="PackedScene" id=4]
+[ext_resource path="res://addons/kenney_prototypes/assets/colors/light/scenes/prototype_light_10.tscn" type="PackedScene" id=5]
+[ext_resource path="res://addons/kenney_prototypes/assets/colors/orange/scenes/prototype_orange_05.tscn" type="PackedScene" id=6]
+[ext_resource path="res://addons/kenney_prototypes/assets/colors/green/scenes/prototype_green_10.tscn" type="PackedScene" id=7]
+[ext_resource path="res://addons/kenney_prototypes/assets/colors/dark/scenes/prototype_dark_01.tscn" type="PackedScene" id=8]
+[ext_resource path="res://addons/kenney_prototypes/assets/colors/purple/scenes/prototype_purple_09.tscn" type="PackedScene" id=9]
+
+[node name="Playground" type="Spatial"]
+
+[node name="PrototypeCube3" parent="." instance=ExtResource( 8 )]
+transform = Transform( 0.5, 0, 0, 0, 0.25, 0, 0, 0, 0.5, -12, 1, -4 )
+
+[node name="PrototypeCube" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -4 )
+
+[node name="PrototypeCube2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 0.5, 0, 0, 0, 1, -12, 0, -4 )
+
+[node name="PrototypeCube20" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 3, 0, 0, 0, 1, -16, 0, -4 )
+
+[node name="PrototypeCube40" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 3, 0, 0, 0, 1, -16, 0, -4 )
+
+[node name="PrototypeCube41" parent="." instance=ExtResource( 2 )]
+transform = Transform( 8, 0, 0, 0, 1, 0, 0, 0, 5, -32, 0, -12 )
+
+[node name="PrototypeCube9" parent="." instance=ExtResource( 2 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -6 )
+
+[node name="PrototypeCube24" parent="." instance=ExtResource( 2 )]
+transform = Transform( 4, 0, 0, 0, 1, 0, 0, 0, 2, -14, 0, -10 )
+
+[node name="PrototypeCube35" parent="." instance=ExtResource( 2 )]
+transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -12 )
+
+[node name="PrototypeCube4" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 0.125, 0, 0, 0, 0.5, -10, 1, -4 )
+
+[node name="PrototypeCube11" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 0.125, 0, 0, 0, 1, -14, 2, -6 )
+
+[node name="PrototypeCube15" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 0.125, 0, 0, 0, 0.5, -14, 3, -6 )
+
+[node name="PrototypeCube17" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 0.125, 0, 0, 0, 0.25, -14, 3.5, -6 )
+
+[node name="PrototypeCube18" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -14, 3.75, -6 )
+
+[node name="PrototypeCube16" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 0.125, 0, 0, 0, 0.375, -14, 3.25, -6 )
+
+[node name="PrototypeCube14" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 0.125, 0, 0, 0, 0.625, -14, 2.75, -6 )
+
+[node name="PrototypeCube13" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 0.125, 0, 0, 0, 0.75, -14, 2.5, -6 )
+
+[node name="PrototypeCube12" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 0.125, 0, 0, 0, 0.875, -14, 2.25, -6 )
+
+[node name="PrototypeCube6" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 0.125, 0, 0, 0, 0.25, -10, 1.50046, -4 )
+
+[node name="PrototypeCube8" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -10, 1.75, -4 )
+
+[node name="PrototypeCube7" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 0.125, 0, 0, 0, 0.375, -10, 1.25, -4 )
+
+[node name="PrototypeCube19" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 4, -6 )
+
+[node name="PrototypeCube30" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, -14, 6, -8 )
+
+[node name="PrototypeCube47" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, -26, 6, -8 )
+
+[node name="PrototypeCube31" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 6, -8 )
+
+[node name="PrototypeCube48" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 6, -10 )
+
+[node name="PrototypeCube50" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 4, -10 )
+
+[node name="PrototypeCube44" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 4, -4 )
+
+[node name="PrototypeCube21" parent="." instance=ExtResource( 8 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -15, 6, -5 )
+
+[node name="PrototypeCube25" parent="." instance=ExtResource( 8 )]
+transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, -11, 2, -5 )
+
+[node name="PrototypeCube59" parent="." instance=ExtResource( 8 )]
+transform = Transform( 0.25, 0, 0, 0, 1, 0, 0, 0, 0.5, -8.5, 2, -6 )
+
+[node name="PrototypeCube26" parent="." instance=ExtResource( 8 )]
+transform = Transform( 0.49971, 0, 0, 0, 0.49971, 0, 0, 0, 0.49971, -8, 2, -8 )
+
+[node name="PrototypeCube28" parent="." instance=ExtResource( 8 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -9, 6, -7 )
+
+[node name="PrototypeCube29" parent="." instance=ExtResource( 8 )]
+transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, -12, 7, -7 )
+
+[node name="PrototypeCube46" parent="." instance=ExtResource( 8 )]
+transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, -26, 7, -6 )
+
+[node name="PrototypeCube27" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 4, -8 )
+
+[node name="PrototypeCube38" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 4, -12 )
+
+[node name="PrototypeCube22" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 2, -8 )
+
+[node name="PrototypeCube33" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 4, -8 )
+
+[node name="PrototypeCube49" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 4, -10 )
+
+[node name="PrototypeCube23" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 2, -8 )
+
+[node name="PrototypeCube37" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 2, -4 )
+
+[node name="PrototypeCube42" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 2, -4 )
+
+[node name="PrototypeCube43" parent="." instance=ExtResource( 3 )]
+transform = Transform( 4, 0, 0, 0, 1, 0, 0, 0, 4, -32, 2, -10 )
+
+[node name="PrototypeCube34" parent="." instance=ExtResource( 3 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 1, -12, 2, -10 )
+
+[node name="PrototypeCube39" parent="." instance=ExtResource( 3 )]
+transform = Transform( 4, 0, 0, 0, 1, 0, 0, 0, 1, -12, 2, -12 )
+
+[node name="PrototypeCube51" parent="." instance=ExtResource( 3 )]
+transform = Transform( 4, 0, 0, 0, 1, 0, 0, 0, 1, -20, 2, -12 )
+
+[node name="PrototypeCube32" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 2, -8 )
+
+[node name="PrototypeCube10" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1.5, 0, 0, 0, 1, -12, 4, -8 )
+
+[node name="PrototypeCube52" parent="." instance=ExtResource( 6 )]
+transform = Transform( 2, 0, 0, 0, 1.5, 0, 0, 0, 1, -16, 4, -12 )
+
+[node name="PrototypeCube45" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1.5, 0, 0, 0, 1, -26, 4, -6 )
+
+[node name="PrototypeCube36" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1.5, 0, 0, 0, 1, -6, 4, -12 )
+
+[node name="PrototypeCube53" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -15, 6, -3 )
+
+[node name="PrototypeCube56" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -15, 7, -11.5 )
+
+[node name="PrototypeCube57" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -5, 7, -11.5 )
+
+[node name="PrototypeCube54" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1.75, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -12, 3.5, -6 )
+
+[node name="PrototypeCube55" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -10, 2, -5 )
+
+[node name="PrototypeCube58" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 2, -6 )

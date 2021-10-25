@@ -12,4 +12,3 @@ func set_connect_type(host):
 		connecting_lable.text = CONNECT_TEXT[0]
 	else:
 		connecting_lable.text = CONNECT_TEXT[1]
-		

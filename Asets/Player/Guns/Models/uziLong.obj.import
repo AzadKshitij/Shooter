@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/uziLong.obj-9b174c3d8c456c38e9e6b431cac3fd4e.mesh"
+
+[deps]
+
+files=[ "res://.import/uziLong.obj-9b174c3d8c456c38e9e6b431cac3fd4e.mesh" ]
+
+source_file="res://Asets/Player/Guns/Models/uziLong.obj"
+dest_files=[ "res://.import/uziLong.obj-9b174c3d8c456c38e9e6b431cac3fd4e.mesh", "res://.import/uziLong.obj-9b174c3d8c456c38e9e6b431cac3fd4e.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

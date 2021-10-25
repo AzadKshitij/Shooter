@@ -1,51 +1,151 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Asets/Player/player.gd" type="Script" id=1]
+[ext_resource path="res://Asets/Player/Crosshair/Crosshair_+.png" type="Texture" id=2]
+[ext_resource path="res://Asets/Player/Guns/Models/uziGoldLongSilencer.obj" type="ArrayMesh" id=3]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.145098, 0.85098, 0, 1 )
 
 [sub_resource type="CapsuleMesh" id=2]
 material = SubResource( 1 )
-mid_height = 2.5
+mid_height = 2.0
 
-[sub_resource type="CubeMesh" id=3]
+[sub_resource type="SphereMesh" id=3]
 
-[sub_resource type="SpatialMaterial" id=4]
-albedo_color = Color( 0.0313726, 0.0235294, 1, 1 )
+[sub_resource type="SphereShape" id=5]
 
-[sub_resource type="CapsuleShape" id=5]
-height = 2.5
+[sub_resource type="CapsuleShape" id=6]
+height = 2.0
 
-[sub_resource type="CylinderShape" id=6]
+[sub_resource type="CylinderShape" id=7]
+height = 0.998083
 
 [node name="Player" type="KinematicBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
 collision_layer = 2
 collision_mask = 3
 script = ExtResource( 1 )
+h_acceleration = 4.0
+normal_acceleration = 4.0
 
 [node name="Body" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+layers = 4
 mesh = SubResource( 2 )
 material/0 = null
 
-[node name="Eyes" type="MeshInstance" parent="Body"]
-transform = Transform( 0.5, 0, 0, 0, -8.74228e-09, 0.2, 0, -0.2, -8.74228e-09, 0, 1, -1 )
+[node name="Head" type="MeshInstance" parent="Body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.01648e-07, -2.32544 )
 mesh = SubResource( 3 )
-material/0 = SubResource( 4 )
+material/0 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+[node name="HeadCamera" type="Camera" parent="Body/Head"]
+transform = Transform( -1, -8.74228e-08, -4.37114e-08, 4.37114e-08, 3.55271e-15, -1, 8.74228e-08, -1, 0, 0, 0, -0.5 )
+cull_mask = 1048569
+current = true
+fov = 90.0
+
+[node name="Hands" type="Spatial" parent="Body/Head/HeadCamera"]
+transform = Transform( -1, 4.37114e-08, 8.74228e-08, -8.74228e-08, 3.55271e-15, -1, -4.37114e-08, -1, 0, 1.5, -1.25, -1.25 )
+
+[node name="GoldenUziLongsilenser" type="MeshInstance" parent="Body/Head/HeadCamera/Hands"]
+transform = Transform( 25, 0, 0, 0, -1.09278e-06, 25, 0, -25, -1.09278e-06, 0.45, 0.6, -0.2 )
+layers = 2
+mesh = ExtResource( 3 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+material/9 = null
+material/10 = null
+material/11 = null
+material/12 = null
+material/13 = null
+material/14 = null
+material/15 = null
+material/16 = null
+material/17 = null
+material/18 = null
+material/19 = null
+material/20 = null
+material/21 = null
+material/22 = null
+material/23 = null
+material/24 = null
+material/25 = null
+material/26 = null
+material/27 = null
+material/28 = null
+material/29 = null
+material/30 = null
+material/31 = null
+material/32 = null
+material/33 = null
+material/34 = null
+material/35 = null
+material/36 = null
+material/37 = null
+material/38 = null
+
+[node name="ViewportContainer" type="ViewportContainer" parent="Body/Head/HeadCamera"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="Body/Head/HeadCamera/ViewportContainer"]
+size = Vector2( 1920, 1080 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="GunCamera" type="Camera" parent="Body/Head/HeadCamera/ViewportContainer/Viewport"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 4.90845, 0 )
+cull_mask = 2
+fov = 90.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Body/Head/HeadCamera"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Body/Head/HeadCamera/CenterContainer"]
+margin_left = 960.0
+margin_top = 540.0
+margin_right = 960.0
+margin_bottom = 540.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 4
+
+[node name="AimCast" type="RayCast" parent="Body/Head/HeadCamera"]
+transform = Transform( 1, 1.91069e-15, 0, 1.91069e-15, 1, 0, 0, 0, 1, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, -10000 )
+
+[node name="Area" type="Area" parent="Body/Head"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Body/Head/Area"]
 shape = SubResource( 5 )
 
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, 1.01 )
-current = true
+[node name="Body_Collider" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 6 )
 
 [node name="Feet" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.25, 0 )
-shape = SubResource( 6 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0 )
+shape = SubResource( 7 )
 
 [node name="GroundCheck" type="RayCast" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.15, 0 )

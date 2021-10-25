@@ -8,16 +8,20 @@
 [node name="lobby" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -3.77979
+margin_top = -1.25992
+margin_right = -3.77979
+margin_bottom = -1.25989
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HostButton" type="Button" parent="."]
-margin_left = 497.019
-margin_top = 326.218
-margin_right = 784.019
-margin_bottom = 416.218
+margin_left = 816.5
+margin_top = 495.0
+margin_right = 1103.5
+margin_bottom = 585.0
 text = "Host"
 script = ExtResource( 1 )
 __meta__ = {
@@ -36,11 +40,11 @@ align = 1
 valign = 1
 
 [node name="JoinButton" type="Button" parent="."]
-margin_left = 492.256
-margin_top = 489.72
-margin_right = 779.256
-margin_bottom = 579.72
-text = "Host"
+margin_left = 820.344
+margin_top = 633.914
+margin_right = 1107.34
+margin_bottom = 723.914
+text = "Join"
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -55,6 +59,9 @@ margin_right = 141.344
 margin_bottom = -5.33649
 text = "Ip(Your Own IP)"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="invalid Ip lable" type="Label" parent="JoinButton"]
 anchor_left = 0.5
@@ -64,7 +71,7 @@ margin_top = 104.914
 margin_right = 139.605
 margin_bottom = 138.914
 custom_colors/font_color = Color( 1, 0, 0, 1 )
-text = "This Ip is invalid"
+text = "Invalid IP Address"
 align = 1
 valign = 1
 __meta__ = {

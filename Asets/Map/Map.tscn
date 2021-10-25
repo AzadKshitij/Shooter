@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
+[ext_resource path="res://Asets/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Asets/Map/map.gd" type="Script" id=2]
 
 [sub_resource type="PlaneMesh" id=1]
@@ -31,3 +32,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.703, 2.3, -7.028 )
 
 [node name="player2pos" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.95, 2.3, -10.868 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 7.33149 )

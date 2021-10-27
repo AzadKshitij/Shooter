@@ -13,12 +13,12 @@ mid_height = 2.0
 
 [sub_resource type="SphereMesh" id=3]
 
-[sub_resource type="SphereShape" id=5]
+[sub_resource type="SphereShape" id=4]
 
-[sub_resource type="CapsuleShape" id=6]
+[sub_resource type="CapsuleShape" id=5]
 height = 2.0
 
-[sub_resource type="CylinderShape" id=7]
+[sub_resource type="CylinderShape" id=6]
 height = 0.998083
 
 [node name="Player" type="KinematicBody"]
@@ -26,6 +26,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
 collision_layer = 2
 collision_mask = 3
 script = ExtResource( 1 )
+head = NodePath("Body/Head")
+ground_check = NodePath("Feet/GroundCheck")
+body = NodePath("Body")
+head_cam = NodePath("Body/Head/HeadCamera")
+gun_cam = NodePath("Body/Head/HeadCamera/ViewportContainer/Viewport/GunCamera")
+aim_cast = NodePath("Body/Head/HeadCamera/AimCast")
+muzzle = NodePath("Body/Head/HeadCamera/Hands/GoldenUziLongsilenser/Muzzle")
 h_acceleration = 4.0
 normal_acceleration = 4.0
 
@@ -93,6 +100,9 @@ material/36 = null
 material/37 = null
 material/38 = null
 
+[node name="Muzzle" type="Spatial" parent="Body/Head/HeadCamera/Hands/GoldenUziLongsilenser"]
+transform = Transform( 1, 0, 0, 0, 1, 4.06576e-20, 0, -4.06576e-20, 1, 0, 0.0163376, 0.05406 )
+
 [node name="ViewportContainer" type="ViewportContainer" parent="Body/Head/HeadCamera"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -137,18 +147,18 @@ cast_to = Vector3( 0, 0, -10000 )
 [node name="Area" type="Area" parent="Body/Head"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Body/Head/Area"]
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="Body_Collider" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="Feet" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0 )
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 
-[node name="GroundCheck" type="RayCast" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.15, 0 )
+[node name="GroundCheck" type="RayCast" parent="Feet"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.65, 0 )
 enabled = true
 cast_to = Vector3( 0, -1.5, 0 )
 __meta__ = {

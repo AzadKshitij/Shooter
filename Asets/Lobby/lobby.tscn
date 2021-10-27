@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Asets/Lobby/HostButton.gd" type="Script" id=1]
 [ext_resource path="res://Asets/Lobby/JoinButton.gd" type="Script" id=2]
 [ext_resource path="res://Asets/Lobby/Connecting.gd" type="Script" id=3]
 [ext_resource path="res://Asets/Lobby/Lobby.gd" type="Script" id=4]
+[ext_resource path="res://Asets/Resources/Themes/Ui.tres" type="Theme" id=5]
 
 [node name="lobby" type="Control"]
 anchor_right = 1.0
@@ -12,16 +13,18 @@ margin_left = -3.77979
 margin_top = -1.25992
 margin_right = -3.77979
 margin_bottom = -1.25989
+theme = ExtResource( 5 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HostButton" type="Button" parent="."]
-margin_left = 816.5
-margin_top = 495.0
-margin_right = 1103.5
-margin_bottom = 585.0
+margin_left = 415.501
+margin_top = 315.0
+margin_right = 1512.5
+margin_bottom = 426.0
+theme = ExtResource( 5 )
 text = "Host"
 script = ExtResource( 1 )
 __meta__ = {
@@ -31,19 +34,22 @@ __meta__ = {
 [node name="ip" type="Label" parent="HostButton"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -140.5
-margin_top = -42.7107
-margin_right = 140.5
-margin_bottom = -8.71069
+margin_left = -548.5
+margin_top = -119.0
+margin_right = 548.5
+margin_bottom = -9.0
 text = "Ip(Your Own IP)"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="JoinButton" type="Button" parent="."]
-margin_left = 820.344
-margin_top = 633.914
-margin_right = 1107.34
-margin_bottom = 723.914
+margin_left = 416.0
+margin_top = 562.0
+margin_right = 1513.0
+margin_bottom = 667.0
 text = "Join"
 script = ExtResource( 2 )
 __meta__ = {
@@ -53,12 +59,14 @@ __meta__ = {
 [node name="ip" type="LineEdit" parent="JoinButton"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -139.656
-margin_top = -39.3365
-margin_right = 141.344
-margin_bottom = -5.33649
-text = "Ip(Your Own IP)"
+margin_left = -256.448
+margin_top = -110.2
+margin_right = 255.552
+margin_bottom = -6.19952
 align = 1
+placeholder_text = "Enter IP Address"
+placeholder_alpha = 0.4
+caret_blink = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -66,10 +74,10 @@ __meta__ = {
 [node name="invalid Ip lable" type="Label" parent="JoinButton"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -141.395
-margin_top = 104.914
-margin_right = 139.605
-margin_bottom = 138.914
+margin_left = -548.5
+margin_top = 105.0
+margin_right = 548.5
+margin_bottom = 212.0
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "Invalid IP Address"
 align = 1

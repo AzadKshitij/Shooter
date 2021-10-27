@@ -1,12 +1,24 @@
 extends KinematicBody
 
-onready var head : Spatial = $Body/Head
-onready var ground_check: RayCast = $GroundCheck
-onready var body: MeshInstance = $Body
-onready var head_cam := $Body/Head/HeadCamera
-#onready var gun_cam := $Body/Head/HeadCamera/Viewport/GunCamera
-onready var gun_cam := $Body/Head/HeadCamera/ViewportContainer/Viewport/GunCamera
-onready var aimCast = $Body/Head/HeadCamera/AimCast
+#onready var head : Spatial = $Body/Head
+#onready var ground_check: RayCast = $GroundCheck
+#onready var body: MeshInstance = $Body
+#onready var head_cam := $Body/Head/HeadCamera
+##onready var gun_cam := $Body/Head/HeadCamera/Viewport/GunCamera
+#onready var gun_cam := $Body/Head/HeadCamera/ViewportContainer/Viewport/GunCamera
+#onready var aimCast = $Body/Head/HeadCamera/AimCast
+
+export(NodePath) var head;
+export(NodePath) var ground_check;
+export(NodePath) var body;
+export(NodePath) var head_cam;
+export(NodePath) var gun_cam;
+export(NodePath) var aim_cast;
+export(NodePath) var muzzle;
+
+onready var decal = preload("res://Asets/Player/Guns/BulletDecal.tscn")
+
+
 
 var direction:Vector3 = Vector3()
 var h_velocity:Vector3 = Vector3()
@@ -37,6 +49,13 @@ export(float) var camera_sensitivity: float = 0.05
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	head = get_node(head)
+	ground_check = get_node(ground_check)
+	body = get_node(body)
+	head_cam = get_node(head_cam)
+	gun_cam = get_node(gun_cam)
+	aim_cast = get_node(aim_cast)
+	muzzle = get_node(muzzle)
 
 func _process(delta):
 	gun_cam.global_transform = head_cam.global_transform
@@ -64,7 +83,7 @@ func _physics_process(delta):
 			print("jumpPressed")
 			gravity_vec = Vector3.UP * jump_impulse
 		if Input.is_action_just_pressed("fire"):
-			fire()
+			fire_()
 		
 		# planer Movement
 		h_velocity = h_velocity.linear_interpolate(direction * player_speed, h_acceleration * delta)
@@ -72,7 +91,7 @@ func _physics_process(delta):
 		movement.x = h_velocity.x + gravity_vec.x
 		movement.y = gravity_vec.y
 		if movement != Vector3():
-			move_and_slide(movement, Vector3.UP)
+			movement = move_and_slide(movement, Vector3.UP, false, 4, PI/4, false)
 		if is_master :
 			rpc_unreliable("_update_position", global_transform)
 
@@ -112,14 +131,22 @@ func _get_movement_direction()->Vector3:
 
 	return dir.normalized()
 
-func fire():
-	print("fire")
-	if aimCast.is_colliding():
-		print("is_colliding()")
-		var target = aimCast.get_collider()
-		if target.is_in_group("Enemy"):
-			print("HitEnemy")
-			target.health -= damage
+
+func fire_():
+	if aim_cast.is_colliding():
+		
+		var bullet = get_world().direct_space_state
+		var collision = bullet.intersect_ray(muzzle.global_transform.origin, aim_cast.get_collision_point())
+		if collision:
+			var b = decal.instance()
+			var target = collision.collider
+#			aim_cast.get_collider().add_child(b)
+			target.add_child(b)
+			b.global_transform.origin = aim_cast.get_collision_point()
+			b.look_at( aim_cast.get_collision_point() +  aim_cast.get_collision_normal(), Vector3.UP)
+			if target.is_in_group("Enemy"):
+				target.health -= damage
+
 
 func initialize(id):
 	name = str(id)
